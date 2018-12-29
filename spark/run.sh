@@ -11,6 +11,7 @@
 
 set -euxo pipefail
 
+TAG=aa0ebba9a0a4
 MY_UID=$UID
 MY_NOTEBOOK_DIR=$HOME/Documents/code/notebooks
 
@@ -31,4 +32,4 @@ docker run -it --rm -p 127.0.0.1:8888:8888 \
   -e GRANT_SUDO=yes \
   -e JUPYTER_ENABLE_LAB=yes \
   --mount type=bind,source=${MY_NOTEBOOK_DIR},target=/home/jovyan/work \
-  jupyter/all-spark-notebook
+  jupyter/all-spark-notebook:${TAG}
