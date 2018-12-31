@@ -7,20 +7,24 @@
 
 set -euo pipefail
 
+MY_UID=$UID
+MY_DATA_DIR=$HOME/Documents/data
+MY_APP_DIR=$HOME/Documents/code/spark-app
+
 # run a command in spark container
 # need to mount a data directory to keep results, or push them somewhere
 # note that local[*] uses all CPUs available to the docker container
 
-# giving different name than notebook use  to avoid name conflict
-# seems that either I should use existing container as notebook or not provide a name
-#   --name spark-custom-run \
+# do not name these ephemeral containers.  It's not a pet.
 docker run \
-  --rm -it \
+  --user root \
+  -e NB_UID=${MY_UID} \
+  -e GRANT_SUDO=yes \
+  --env SPARK_CONF_DIR=/home/jovyan/spark-app/conf \
+  --mount type=bind,source=${MY_DATA_DIR},target=/home/jovyan/data \
+  --mount type=bind,source=${MY_APP_DIR},target=/home/jovyan/spark-app \
   spark-custom \
   spark-submit \
     --master local[*] \
     /usr/local/spark/examples/src/main/python/pi.py \
     80
-
-  # --mount type=bind,source=${HOME}/Documents/code/notebooks,target=/home/jovyan/work \
-  # --mount type=bind,source=${HOME}/.aws,target=/home/developer/.aws,readonly \

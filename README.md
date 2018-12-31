@@ -11,3 +11,6 @@ Provides containers for running jupyter notebooks.  See jupyter/docker-stacks do
 * [documentation root](https://jupyter-docker-stacks.readthedocs.io/en/latest)
 * [selecting a stack](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/selecting.html)
 * [jupyter docker hub](https://hub.docker.com/u/jupyter/)
+
+
+spark-custom is an extension of all-spark-notebook for this environment
