@@ -1,6 +1,11 @@
 # extended custom jupyter notebook container
 
 jupyter docker-stack extended to work more easily as a spark command line and testing platform
+container published to https://cloud.docker.com/repository/docker/quagly/spark/general
+
+This is exploritory as I wasn't sure how to make this work.  See standalone project
+[docker-spark-use](https://github.com/quagly/docker-spark-use)
+ for the usability aspect.  That project does not include container build.
 
 Also Provides a spark notebook with python, R, and scala notebook support.  See jupyter/docker-stacks documentation.
 

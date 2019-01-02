@@ -10,3 +10,5 @@ RUN  apt-get -y update && \
 USER jovyan
 
 ENV PATH $PATH:$SPARK_HOME/bin:$SPARK_HOME/sbin
+
+# if I keep logging into the container then consider adding ${HOME} setup here
