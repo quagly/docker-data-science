@@ -10,4 +10,10 @@ Also Provides a spark notebook with python, R, and scala notebook support.  See 
 * [jupyter docker hub](https://hub.docker.com/u/jupyter/)
 * [spark image specifics](https://jupyter-docker-stacks.readthedocs.io/en/latest/using/specifics.html)
 
+* `build.sh` builds the image
+* `run.sh` run a vanilla container
+* `run-conf.sh` run container with local spark configuration directory
+
+Other scripts are for testing or just things I tried out.  Keeping them for now until I understand better what it useful.
+
 
